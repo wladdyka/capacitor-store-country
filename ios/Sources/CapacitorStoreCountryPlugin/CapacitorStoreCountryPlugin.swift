@@ -10,14 +10,16 @@ public class CapacitorStoreCountryPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "CapacitorStoreCountryPlugin"
     public let jsName = "CapacitorStoreCountry"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "getAppStoreCountry", returnType: CAPPluginReturnPromise)
     ]
+
     private let implementation = CapacitorStoreCountry()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func getAppStoreCountry(_ call: CAPPluginCall) {
+        implementation.getCountryCode { country in
+            call.resolve([
+                "country": country
+            ])
+        }
     }
 }
