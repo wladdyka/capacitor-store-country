@@ -1,3 +1,3 @@
 export interface CapacitorStoreCountryPlugin {
-  getAppStoreCountry(): Promise<{ value: string }>;
+  getAppStoreCountry(): Promise<{ country: string }>;
 }
