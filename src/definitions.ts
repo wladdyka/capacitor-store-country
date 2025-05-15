@@ -1,3 +1,3 @@
 export interface CapacitorStoreCountryPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  getAppStoreCountry(): Promise<{ value: string }>;
 }
