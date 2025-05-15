@@ -4,7 +4,6 @@ import type { CapacitorStoreCountryPlugin } from './definitions';
 
 export class CapacitorStoreCountryWeb extends WebPlugin implements CapacitorStoreCountryPlugin {
   async getAppStoreCountry(): Promise<{ value: string }> {
-    console.log('ECHO FROM WEB');
-    return { value: 'NO APPSTORE HERE...' };
+    return { value: 'NIL' };
   }
 }
